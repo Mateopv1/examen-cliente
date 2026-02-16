@@ -1,10 +1,16 @@
 <section class="container">
   <h2>Listado de Series Disponibles</h2>
   <div class="listado">
-    <article *ngFor="let serie of arrSeries" class="card">
-      <h3>{{ serie.title }}</h3>
-      <p><strong>Canal:</strong> {{ serie.channel }}</p>
-      <p><strong>Puntuación:</strong> {{ serie.rating }}/10</p>
-    </article>
+    
+    @for (serie of arrSeries; track serie.id) {
+      <article class="card">
+        <h3>{{ serie.title }}</h3>
+        <p><strong>Canal:</strong> {{ serie.channel }}</p>
+        <p><strong>Puntuación:</strong> {{ serie.rating }}/10</p>
+      </article>
+    } @empty {
+      <p>No hay series disponibles.</p>
+    }
+
   </div>
 </section>

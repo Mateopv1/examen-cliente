@@ -1,16 +1,16 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { SeriesService } from '../../services/series.service';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [], 
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
-  seriesService = inject(SeriesService);
+  private seriesService = inject(SeriesService); 
   arrSeries: any[] = [];
 
   ngOnInit() {

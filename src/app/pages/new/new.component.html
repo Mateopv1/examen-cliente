@@ -6,15 +6,18 @@
     <div class="campo">
       <label>Título:</label>
       <input type="text" formControlName="title" placeholder="Ej: Breaking Bad">
-      <small *ngIf="serieForm.get('title')?.invalid && serieForm.get('title')?.touched" style="color:red;">
-        El título debe tener al menos 3 caracteres.
-      </small>
+      
+      @if (serieForm.get('title')?.invalid && serieForm.get('title')?.touched) {
+        <small style="color:red;">
+          El título es obligatorio (mín. 3 caracteres).
+        </small>
+      }
     </div>
 
     <div class="campo">
       <label>Plataforma/Canal:</label>
       <input type="text" formControlName="channel" placeholder="Ej: Netflix">
-    </div>
+      </div>
 
     <div class="campo">
       <label>Puntuación (0-10):</label>
